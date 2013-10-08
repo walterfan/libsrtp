@@ -63,12 +63,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="RtpPacket.h" />
     <ClInclude Include="RtpReceiver.h" />
     <ClInclude Include="RtpSender.h" />
+    <ClInclude Include="RtpUtil.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="RtpPacket.cpp" />
     <ClCompile Include="RtpReceiver.cpp" />
     <ClCompile Include="RtpSender.cpp" />
+    <ClCompile Include="RtpUtil.cpp" />
     <ClCompile Include="SRTPExample.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

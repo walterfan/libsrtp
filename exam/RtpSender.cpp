@@ -1,6 +1,5 @@
 #include "RtpSender.h"
 
-
 CRtpSender::CRtpSender(void)
 {
 }

@@ -21,6 +21,12 @@
     <ClInclude Include="RtpReceiver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="RtpPacket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RtpUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RtpSender.cpp">
@@ -30,6 +36,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SRTPExample.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RtpPacket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RtpUtil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
