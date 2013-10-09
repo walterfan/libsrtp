@@ -1,17 +1,19 @@
 #ifndef _RTP_PACKET_H
 #define _RTP_PACKET_H
 
-extern struct srtp_hdr_t;
+#include "srtp.h"
+#include "srtp_priv.h"
 
 class CRtpPacket
 {
 public:
 	CRtpPacket(void);
+    CRtpPacket(srtp_hdr_t* pRtpHeader, uint8_t* pMessage);
 	virtual ~CRtpPacket(void);
 private:
 	srtp_hdr_t* m_pRtpHeader;
-	unsigned char* m_pMessage;
-	unsigned int m_nPacketLen;
+	uint8_t* m_pMessage;
+	uint32_t m_nPacketLen;
 };
 
 #endif

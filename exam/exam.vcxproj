@@ -42,11 +42,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\include;..\crypto\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;srtp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -66,12 +68,14 @@
     <ClInclude Include="RtpPacket.h" />
     <ClInclude Include="RtpReceiver.h" />
     <ClInclude Include="RtpSender.h" />
+    <ClInclude Include="RtpSession.h" />
     <ClInclude Include="RtpUtil.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RtpPacket.cpp" />
     <ClCompile Include="RtpReceiver.cpp" />
     <ClCompile Include="RtpSender.cpp" />
+    <ClCompile Include="RtpSession.cpp" />
     <ClCompile Include="RtpUtil.cpp" />
     <ClCompile Include="SRTPExample.cpp" />
   </ItemGroup>

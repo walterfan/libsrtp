@@ -181,7 +181,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="crypto\RtpUtil.cpp" />
     <ClCompile Include="srtp\ekt.c" />
     <ClCompile Include="srtp\srtp.c" />
     <ClCompile Include="crypto\kernel\alloc.c" />
