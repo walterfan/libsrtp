@@ -12,7 +12,7 @@ public:
 	virtual ~CRtpPacket(void);
 private:
 	srtp_hdr_t* m_pRtpHeader;
-	uint8_t* m_pMessage;
+	uint8_t* m_pPacket;
 	uint32_t m_nPacketLen;
 };
 

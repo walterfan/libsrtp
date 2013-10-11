@@ -15,16 +15,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="RtpSender.h">
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RtpReceiver.h">
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RtpUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RtpPacket.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RtpUtil.h">
+    <ClInclude Include="RtpReceiver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RtpSender.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RtpSession.h">
@@ -32,22 +41,22 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="RtpSender.cpp">
+    <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RtpReceiver.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SRTPExample.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="RtpPacket.cpp">
+    <ClCompile Include="exam.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="RtpUtil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="RtpPacket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="RtpSession.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RtpSender.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
