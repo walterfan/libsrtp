@@ -55,6 +55,8 @@ err_status_t srtp_test(const srtp_policy_t *policy)
   uint32_t ssrc;
   srtp_policy_t *rcvr_policy;
 
+  debug_print(mod_driver, "srtp create sender session/stream at %d\n", __LINE__);
+
   err_check(srtp_create(&srtp_sender, policy), __LINE__);
 
   /* print out policy */
@@ -90,6 +92,9 @@ err_status_t srtp_test(const srtp_policy_t *policy)
   debug_print(mod_driver, "reference packet before protection:\n%s", 	      
 	      octet_string_hex_string((uint8_t *)hdr, len));
 #endif
+
+  debug_print(mod_driver, "srtp_protect... at %d\n", __LINE__);
+
   err_check(srtp_protect(srtp_sender, hdr, &len), __LINE__);
 
   debug_print(mod_driver, "after protection:\n%s", 	      
@@ -164,9 +169,9 @@ err_status_t srtp_test(const srtp_policy_t *policy)
   if (policy->ssrc.type == ssrc_any_outbound) {
     rcvr_policy->ssrc.type = ssrc_any_inbound;       
   } 
-
+  debug_print(mod_driver, "srtp create receiver session/stream at %d\n", __LINE__);
   err_check(srtp_create(&srtp_rcvr, rcvr_policy), __LINE__);
-   
+  debug_print(mod_driver, "srtp_unprotect... at %d\n", __LINE__);
   err_check(srtp_unprotect(srtp_rcvr, hdr, &len), __LINE__);
 
   debug_print(mod_driver, "after unprotection:\n%s", 	      
@@ -265,6 +270,15 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	printf("--- srtp example --\n");
 	err_check(srtp_init(), __LINE__);
+	err_check(crypto_kernel_load_debug_module(&mod_driver), __LINE__);
+	err_status_t status = crypto_kernel_set_debug_module("driver", 1);
+	status = crypto_kernel_set_debug_module("srtp", 1);
+	status = crypto_kernel_set_debug_module("aes icm", 1);
+	status = crypto_kernel_set_debug_module("cipher", 1);
+	status = crypto_kernel_set_debug_module("auth func", 1);
+	status = crypto_kernel_set_debug_module("hmac sha-1", 1);
+	
+	err_check(status, __LINE__);
 	srtp_policy_t policy;
     CreateTestSrtpPolicy(&policy);
 
