@@ -19,7 +19,7 @@ public:
 
 };
 
-void err_check(err_status_t s, int line);
+int err_check(err_status_t s, int line);
 
 char* srtp_packet_to_string(srtp_hdr_t *hdr, int pkt_octet_len);
 

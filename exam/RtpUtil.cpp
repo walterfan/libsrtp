@@ -10,12 +10,12 @@ CRtpUtil::~CRtpUtil(void)
 {
 }
 
-void
-err_check(err_status_t s, int line) {
+int err_check(err_status_t s, int line) {
   if (s) {
     printf("error (code %d) at %d\n", s, line);
-    exit(1);
+    return 1;
   }
+  return 0;
 }
 
 srtp_hdr_t *
